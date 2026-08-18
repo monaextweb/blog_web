@@ -499,9 +499,9 @@ export const courses = [
       'Professional techniques',
       'Guided learning environment',
     ],
-    duration: '[COURSE_DURATION]',
+    duration: '2 – 10 days',
     fee: '[COURSE_FEE]',
-    certification: '[CERTIFICATION_DETAILS]',
+    certification: 'Central Government Certification',
   },
   {
     id: 'nail-art-course',
@@ -514,9 +514,9 @@ export const courses = [
       'Modern nail art techniques',
       'Guided learning environment',
     ],
-    duration: '[COURSE_DURATION]',
+    duration: '2 – 10 days',
     fee: '[COURSE_FEE]',
-    certification: '[CERTIFICATION_DETAILS]',
+    certification: 'Central Government Certification',
   },
   {
     id: 'hair-treatment-course',
@@ -529,9 +529,9 @@ export const courses = [
       'Professional treatment knowledge',
       'Guided learning environment',
     ],
-    duration: '[COURSE_DURATION]',
+    duration: '2 – 10 days',
     fee: '[COURSE_FEE]',
-    certification: '[CERTIFICATION_DETAILS]',
+    certification: 'Central Government Certification',
   },
 ]
 
