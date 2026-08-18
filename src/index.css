@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  @apply bg-white text-black font-body antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply font-heading;
+}
+
+.section-label {
+  @apply text-xs md:text-sm uppercase tracking-widest2 text-accent-dark font-medium;
+}
+
+.container-px {
+  @apply px-6 md:px-10 lg:px-16;
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-md text-sm md:text-base font-medium tracking-wide transition-all duration-300;
+}
+
+.btn-primary {
+  @apply btn bg-black text-white hover:bg-accent-dark;
+}
+
+.btn-secondary {
+  @apply btn bg-white text-black border border-black hover:bg-black hover:text-white;
+}
+
+.btn-accent {
+  @apply btn bg-accent text-white hover:bg-accent-dark;
+}
+
+:focus-visible {
+  outline: 2px solid #b08d57;
+  outline-offset: 3px;
+}
+
+.divider-accent {
+  @apply w-16 h-[2px] bg-accent;
+}
