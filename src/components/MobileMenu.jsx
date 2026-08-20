@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, Instagram, MessageCircle } from 'lucide-react'
-import { navLinks, business, buildWhatsAppLink, whatsappMessages } from '../data/business'
+import { navLinks, business, buildWhatsAppLink, whatsappMessages, placeholderImages } from '../data/business'
 
 export default function MobileMenu({ open, onClose }) {
   return (
@@ -28,7 +28,7 @@ export default function MobileMenu({ open, onClose }) {
             aria-label="Mobile navigation"
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-neutral-100">
-              <span className="font-heading text-lg">{business.shortName}</span>
+              <img src={placeholderImages.logo} alt={business.name} className="h-10 w-auto" />
               <button
                 onClick={onClose}
                 aria-label="Close menu"
@@ -47,7 +47,7 @@ export default function MobileMenu({ open, onClose }) {
                   onClick={onClose}
                   className={({ isActive }) =>
                     `py-4 text-xl font-heading border-b border-neutral-100 flex items-center justify-between transition-colors ${
-                      isActive ? 'text-accent-dark' : 'text-black'
+                      isActive ? 'text-rosegold' : 'text-black'
                     }`
                   }
                 >

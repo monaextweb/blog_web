@@ -123,7 +123,7 @@ export default function Home() {
               Build professional beauty skills with practical training at Mona Hair Extension
               & Nail Art Studio and Academy.
             </p>
-            <Link to="/academy" className="btn bg-white text-black hover:bg-accent hover:text-white mt-2 self-start">
+            <Link to="/academy" className="btn bg-white text-black hover:bg-rosegold hover:text-white mt-2 self-start">
               Explore Academy
               <ArrowRight size={18} />
             </Link>

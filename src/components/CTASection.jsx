@@ -35,7 +35,7 @@ export default function CTASection({
           href={buildWhatsAppLink(message)}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn bg-white text-black hover:bg-accent hover:text-white mt-2"
+          className="btn bg-white text-black hover:bg-rosegold hover:text-white mt-2"
         >
           <MessageCircle size={18} />
           {buttonLabel}

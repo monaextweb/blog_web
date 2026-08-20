@@ -105,30 +105,31 @@ of Mona's studio, staff, or client results — swap in real photography any
 time by replacing the file at the same path, or by updating the path in
 `src/data/business.js` (`placeholderImages.gallery`, `services[].image`).
 
-**Not stock-filled on purpose:** the business **logo** stays as the elegant
-"Mona" text wordmark already used in the navbar/footer — a logo is a specific
-brand mark, not generic decorative photography, so it wasn't fabricated. Swap
-in the real logo file whenever it's available (see `placeholderImages.logo`
-in `src/data/business.js` and `Navbar.jsx`).
+**Logo:** the client's real logo was supplied later and is now live — see
+`public/logo.webp` (background removed from the original black-backdrop
+JPEG so it sits cleanly on the white navbar) and the favicon set
+(`public/favicon-*.png`, `public/apple-touch-icon.png`). Wired via
+`placeholderImages.logo` in `src/data/business.js`, used by `Navbar.jsx`,
+`MobileMenu.jsx`, and `index.html`.
+
+The three extension types that had no photo (Hot Fusion, Micro Mini/Nano,
+Nano Ring) were also filled in later with client-supplied photos — see
+`extensionTypes` in `src/data/business.js`. One of those photos originally
+carried a third-party supplier's logo/caption ("Queen Hair — 8D Micro Bead");
+it was cropped out before use, same reasoning as the Simaxo photos above.
 
 ## 7. Placeholders still to fill in
 
-These were not provided in the requirements and are intentionally left as
-placeholders (search the codebase for `[` to find every instance):
+Genuinely unavailable info only — never invented, per the original brief:
 
 | Placeholder | Where |
 |---|---|
-| `[BUSINESS_ADDRESS]` | `src/data/business.js` → `business.address` |
-| `[GOOGLE_MAPS_LINK]` | `src/data/business.js` → `business.googleMapsLink` |
-| `[OPENING_HOURS]` | `src/data/business.js` → `business.openingHours` |
 | `[FACEBOOK_LINK]` | `src/data/business.js` → `business.facebookLink` (not yet linked in UI — add if provided) |
-| `[LOGO]` | `src/data/business.js` → `placeholderImages.logo`; wire into `Navbar.jsx` once available |
-| `[COURSE_DURATION]` / `[COURSE_FEE]` / `[CERTIFICATION_DETAILS]` | `src/data/business.js` → each entry in `courses` (not present anywhere in the supplied deck either) |
-| Hot Fusion / Micro Mini / Nano Ring photos | `src/data/business.js` → `extensionTypes` entries with `image: null` |
+| `[COURSE_FEE]` | `src/data/business.js` → each entry in `courses` |
 
-All remaining placeholders are factual business details (address, hours,
-pricing, etc.) or specific brand assets (logo) — never invented, per the
-original brief.
+Address, opening hours, Google Maps link, course duration, and course
+certification have since been provided and are live (see `business.js` and
+the Contact/Academy pages).
 
 ### Replacing placeholder images
 

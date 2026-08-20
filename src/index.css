@@ -44,15 +44,15 @@ h4 {
 }
 
 .btn-primary {
-  @apply btn bg-black text-white hover:bg-accent-dark;
+  @apply btn bg-black text-white hover:bg-rosegold;
 }
 
 .btn-secondary {
-  @apply btn bg-white text-black border border-black hover:bg-black hover:text-white;
+  @apply btn bg-white text-black border border-black hover:bg-rosegold hover:text-white hover:border-rosegold;
 }
 
 .btn-accent {
-  @apply btn bg-accent text-white hover:bg-accent-dark;
+  @apply btn bg-accent text-white hover:bg-rosegold;
 }
 
 :focus-visible {

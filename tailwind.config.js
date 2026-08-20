@@ -9,6 +9,10 @@ export default {
           light: '#D9C2A0',
           dark: '#8A6D42',
         },
+        rosegold: {
+          DEFAULT: '#B76E79',
+          dark: '#9C5761',
+        },
       },
       fontFamily: {
         heading: ['"Playfair Display"', 'serif'],

@@ -63,7 +63,7 @@ export const navLinks = [
 // Placeholder image paths — replace with real client photography.
 // See README.md for exact folders/filenames to drop images into.
 export const placeholderImages = {
-  logo: '[LOGO]',
+  logo: '/logo.webp',
   hero: '/images/hero/hair-extension-application.webp',
   gallery: {
     hairExtensions: [

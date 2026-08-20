@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Menu } from 'lucide-react'
-import { navLinks, business } from '../data/business'
+import { navLinks, business, placeholderImages } from '../data/business'
 import MobileMenu from './MobileMenu'
 
 export default function Navbar() {
@@ -30,13 +30,12 @@ export default function Navbar() {
         }`}
       >
         <div className="container-px mx-auto flex items-center justify-between h-20">
-          <NavLink to="/" className="flex flex-col leading-none group">
-            <span className="font-heading text-xl md:text-2xl tracking-wide text-black group-hover:text-accent-dark transition-colors">
-              Mona
-            </span>
-            <span className="text-[10px] md:text-xs uppercase tracking-widest2 text-neutral-500">
-              Hair & Nail Studio and Academy
-            </span>
+          <NavLink to="/" className="flex items-center group" aria-label={business.name}>
+            <img
+              src={placeholderImages.logo}
+              alt={business.name}
+              className="h-14 md:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-10">
@@ -46,10 +45,10 @@ export default function Navbar() {
                 to={link.path}
                 end={link.path === '/'}
                 className={({ isActive }) =>
-                  `relative py-2 text-sm tracking-wide transition-colors duration-300 after:absolute after:left-0 after:-bottom-0.5 after:h-[1.5px] after:bg-accent after:transition-all after:duration-300 ${
+                  `relative py-2 text-sm tracking-wide transition-colors duration-300 after:absolute after:left-0 after:-bottom-0.5 after:h-[1.5px] after:bg-rosegold after:transition-all after:duration-300 ${
                     isActive
-                      ? 'text-black after:w-full'
-                      : 'text-neutral-600 hover:text-black after:w-0 hover:after:w-full'
+                      ? 'text-rosegold after:w-full'
+                      : 'text-neutral-600 hover:text-rosegold after:w-0 hover:after:w-full'
                   }`
                 }
               >
