@@ -1,14 +1,62 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { MessageCircle, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { buildWhatsAppLink, whatsappMessages } from '../data/business'
 import PlaceholderImage from './PlaceholderImage'
+
+function HeroSlider({ images, imageAlt }) {
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (images.length < 2) return
+    const timer = setInterval(() => {
+      setIndex((i) => (i + 1) % images.length)
+    }, 4000)
+    return () => clearInterval(timer)
+  }, [images.length])
+
+  return (
+    <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-lg overflow-hidden">
+      <AnimatePresence mode="sync">
+        <motion.img
+          key={images[index]}
+          src={images[index]}
+          alt={imageAlt}
+          loading="lazy"
+          decoding="async"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: 'easeInOut' }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </AnimatePresence>
+      {images.length > 1 && (
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {images.map((src, i) => (
+            <button
+              key={src}
+              type="button"
+              aria-label={`Show slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === index ? 'w-6 bg-white' : 'w-1.5 bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function Hero({
   eyebrow = 'Mona Hair Extension & Nail Art Studio and Academy',
   title = 'Where Beauty Meets Artistry',
   description = 'Premium hair extension, nail art, hair treatment and women’s hair styling services, along with professional beauty training.',
   imageSrc,
+  images,
   imageAlt = 'Mona Hair Extension & Nail Art Studio and Academy',
   primaryCta = { label: 'Enquire on WhatsApp', message: whatsappMessages.general },
   secondaryCta = { label: 'Explore Academy', to: '/academy' },
@@ -60,13 +108,17 @@ export default function Hero({
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="order-1 md:order-2"
         >
-          <PlaceholderImage
-            src={imageSrc}
-            alt={imageAlt}
-            label="[HERO_IMAGE] — replace with premium hair, nail & academy photography"
-            icon="Sparkles"
-            className="w-full aspect-[4/5] md:aspect-[3/4] rounded-lg"
-          />
+          {images && images.length > 0 ? (
+            <HeroSlider images={images} imageAlt={imageAlt} />
+          ) : (
+            <PlaceholderImage
+              src={imageSrc}
+              alt={imageAlt}
+              label="[HERO_IMAGE] — replace with premium hair, nail & academy photography"
+              icon="Sparkles"
+              className="w-full aspect-[4/5] md:aspect-[3/4] rounded-lg"
+            />
+          )}
         </motion.div>
       </div>
     </section>

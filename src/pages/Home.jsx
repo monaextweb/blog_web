@@ -66,8 +66,12 @@ export default function Home() {
       />
 
       <Hero
-        imageSrc="/images/hero/model-holding-hair-weft.webp"
-        imageAlt="Model holding a hair weft at Mona Hair Extension & Nail Art Studio and Academy"
+        images={[
+          '/images/hero/salon-interior-1.jpg',
+          '/images/hero/salon-interior-2.jpg',
+          '/images/hero/salon-interior-3.jpg',
+        ]}
+        imageAlt="Mona Hair Extension & Nail Art Studio and Academy interior"
       />
 
       {/* Introduction */}
